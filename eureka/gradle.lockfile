@@ -186,4 +186,4 @@ org.springframework:spring-webmvc:6.2.14=compileClasspath,productionRuntimeClass
 org.xmlunit:xmlunit-core:2.10.4=testCompileClasspath,testRuntimeClasspath
 org.yaml:snakeyaml:2.4=compileClasspath,productionRuntimeClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
 xmlpull:xmlpull:1.1.3.1=compileClasspath,productionRuntimeClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-empty=developmentOnly,testAndDevelopmentOnly,testAnnotationProcessor
+empty=cyclonedxBom,developmentOnly,testAndDevelopmentOnly,testAnnotationProcessor
