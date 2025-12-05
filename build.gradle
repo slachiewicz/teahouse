@@ -1,7 +1,7 @@
 ext.buildTime = new Date().toInstant()
 
 buildscript {
-    ext.springBootVersion = '3.+'
+    ext.springBootVersion = '3.5.+'
     ext.springCloudVersion = '2025.0.+'
     ext.springDataVersion = '2025.0.+'
 

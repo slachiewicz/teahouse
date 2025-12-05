@@ -2,15 +2,15 @@ dependencies {
     implementation 'io.micrometer:micrometer-tracing'
     implementation 'org.springframework:spring-webmvc'
     implementation 'org.springframework.boot:spring-boot-actuator-autoconfigure'
-    implementation 'com.google.guava:guava:latest.release'
+    implementation 'com.google.guava:guava:33.+'
     implementation 'org.slf4j:slf4j-api'
     implementation 'org.apache.commons:commons-lang3'
     implementation 'io.github.openfeign:feign-micrometer'
-    implementation('ch.qos.logback.access:logback-access-tomcat:latest.release') {
+    implementation('ch.qos.logback.access:logback-access-tomcat:2.+') {
         exclude group: 'org.apache.tomcat'
         exclude group: 'jakarta.servlet'
     }
     implementation 'org.apache.tomcat.embed:tomcat-embed-core'
 
-    compileOnly 'net.ttddyy.observation:datasource-micrometer-spring-boot:latest.release'
+    compileOnly 'net.ttddyy.observation:datasource-micrometer-spring-boot:1.+'
 }

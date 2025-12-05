@@ -7,7 +7,7 @@ buildscript {
         gradlePluginPortal()
     }
     dependencies {
-        classpath 'gradle.plugin.io.gatling.gradle:gatling-gradle-plugin:latest.release'
+        classpath 'gradle.plugin.io.gatling.gradle:gatling-gradle-plugin:3.+'
     }
 }
 
