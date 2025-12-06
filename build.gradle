@@ -1,9 +1,9 @@
 ext.buildTime = new Date().toInstant()
 
 buildscript {
-    ext.springBootVersion = '3.5.+'
-    ext.springCloudVersion = '2025.0.+'
-    ext.springDataVersion = '2025.0.+'
+    ext.springBootVersion = '4.0.+'
+    ext.springCloudVersion = '2025.1.+'
+    ext.springDataVersion = '2025.1.+'
 
     configurations.classpath {
         resolutionStrategy.activateDependencyLocking()
@@ -54,13 +54,13 @@ subprojects {
                 dependencies.add(conf, platform("org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion"))
                 dependencies.add(conf, platform("org.springframework.data:spring-data-bom:$springDataVersion"))
             }
-            testImplementation platform('org.junit:junit-bom:5.+')
+            testImplementation platform('org.junit:junit-bom:6.+')
 
             annotationProcessor 'org.projectlombok:lombok'
             compileOnly 'org.projectlombok:lombok'
 
             testImplementation 'org.junit.jupiter:junit-jupiter'
-            testImplementation 'io.rest-assured:rest-assured'
+            testImplementation 'io.rest-assured:rest-assured:latest.release'
             testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
         }
 
