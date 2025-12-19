@@ -1,8 +1,5 @@
 package org.example.teahouse.water.observation;
 
-import javax.sound.midi.MidiChannel;
-import javax.sound.midi.MidiUnavailableException;
-
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.observation.Observation;
 import net.ttddyy.observation.tracing.ConnectionContext;
@@ -11,6 +8,9 @@ import org.example.teahouse.core.observation.AbstractMidiObservationHandler;
 import org.jspecify.annotations.NonNull;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
+
+import javax.sound.midi.MidiChannel;
+import javax.sound.midi.MidiUnavailableException;
 
 @Component
 @Profile("midi")

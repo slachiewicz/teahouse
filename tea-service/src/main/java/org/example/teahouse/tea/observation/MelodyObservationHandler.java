@@ -1,21 +1,19 @@
 package org.example.teahouse.tea.observation;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import javax.sound.midi.MidiChannel;
-import javax.sound.midi.MidiUnavailableException;
-
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.observation.Observation;
 import org.example.teahouse.core.observation.AbstractMidiObservationHandler;
-
 import org.jspecify.annotations.NonNull;
 import org.springframework.context.annotation.Profile;
 import org.springframework.http.server.observation.ServerRequestObservationContext;
 import org.springframework.stereotype.Component;
+
+import javax.sound.midi.MidiChannel;
+import javax.sound.midi.MidiUnavailableException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Component
 @Profile("melody")

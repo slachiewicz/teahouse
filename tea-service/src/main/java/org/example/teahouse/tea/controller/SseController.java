@@ -1,13 +1,12 @@
 package org.example.teahouse.tea.controller;
 
-import java.util.concurrent.CompletableFuture;
-
 import org.example.teahouse.tea.observation.SseObservationHandler;
-
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
+
+import java.util.concurrent.CompletableFuture;
 
 @Controller
 public class SseController {

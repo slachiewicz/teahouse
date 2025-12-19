@@ -7,7 +7,6 @@ import io.micrometer.observation.ObservationFilter;
 import io.micrometer.observation.ObservationPredicate;
 import net.ttddyy.observation.tracing.DataSourceBaseContext;
 import org.example.teahouse.core.actuator.info.RuntimeInfoContributor;
-
 import org.springframework.boot.actuate.info.InfoContributor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.context.annotation.Bean;

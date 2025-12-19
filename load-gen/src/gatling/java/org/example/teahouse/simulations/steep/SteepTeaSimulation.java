@@ -1,17 +1,15 @@
 package org.example.teahouse.simulations.steep;
 
-import java.time.Duration;
-
 import io.gatling.javaapi.core.ChainBuilder;
 import io.gatling.javaapi.core.Simulation;
 import io.gatling.javaapi.http.HttpProtocolBuilder;
 
-import static io.gatling.http.HeaderNames.ContentType;
+import java.time.Duration;
+
 import static io.gatling.http.HeaderNames.Accept;
+import static io.gatling.http.HeaderNames.ContentType;
 import static io.gatling.http.HeaderValues.ApplicationJson;
-import static io.gatling.javaapi.core.CoreDsl.constantUsersPerSec;
-import static io.gatling.javaapi.core.CoreDsl.exec;
-import static io.gatling.javaapi.core.CoreDsl.scenario;
+import static io.gatling.javaapi.core.CoreDsl.*;
 import static io.gatling.javaapi.http.HttpDsl.http;
 
 public class SteepTeaSimulation extends Simulation {

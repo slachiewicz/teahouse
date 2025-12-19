@@ -1,8 +1,5 @@
 package org.example.teahouse.tea.service;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
 import lombok.RequiredArgsConstructor;
 import org.example.teahouse.tea.api.TeaResponse;
 import org.example.teahouse.tea.api.Tealeaf;
@@ -13,10 +10,12 @@ import org.example.teahouse.tealeaf.api.SimpleTealeafModel;
 import org.example.teahouse.tealeaf.api.TealeafModel;
 import org.example.teahouse.water.api.SimpleWaterModel;
 import org.example.teahouse.water.api.WaterModel;
-
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.hateoas.PagedModel;
+
+import java.util.ArrayList;
+import java.util.Collection;
 
 @RequiredArgsConstructor
 public class DefaultTeaService implements TeaService{

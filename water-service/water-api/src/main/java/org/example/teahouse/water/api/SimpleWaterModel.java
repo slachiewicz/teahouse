@@ -1,9 +1,10 @@
 package org.example.teahouse.water.api;
 
-import java.util.UUID;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+
+import java.util.UUID;
 
 @Getter
 @Builder

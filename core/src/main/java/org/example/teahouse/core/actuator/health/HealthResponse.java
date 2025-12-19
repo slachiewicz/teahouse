@@ -1,10 +1,10 @@
 package org.example.teahouse.core.actuator.health;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.springframework.boot.health.contributor.Health;
 import org.springframework.boot.health.contributor.Status;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static java.util.stream.Collectors.toUnmodifiableMap;
 

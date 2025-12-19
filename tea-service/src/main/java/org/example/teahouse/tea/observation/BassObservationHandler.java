@@ -1,16 +1,15 @@
 package org.example.teahouse.tea.observation;
 
-import javax.sound.midi.MidiChannel;
-import javax.sound.midi.MidiUnavailableException;
-
 import feign.micrometer.FeignContext;
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.observation.Observation;
 import org.example.teahouse.core.observation.AbstractMidiObservationHandler;
-
 import org.jspecify.annotations.NonNull;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
+
+import javax.sound.midi.MidiChannel;
+import javax.sound.midi.MidiUnavailableException;
 
 @Component
 @Profile("midi")

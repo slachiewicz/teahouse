@@ -1,7 +1,5 @@
 package org.example.teahouse.water.repo;
 
-import java.util.UUID;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.Value;
 import org.example.teahouse.water.api.CreateWaterRequest;
 import org.example.teahouse.water.controller.RepresentationWaterModel;
+
+import java.util.UUID;
 
 import static lombok.AccessLevel.PROTECTED;
 

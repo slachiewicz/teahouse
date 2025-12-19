@@ -1,12 +1,12 @@
 package org.example.teahouse.tea.service;
 
-import java.util.Collection;
-
 import io.micrometer.observation.ObservationRegistry;
 import org.example.teahouse.tea.api.TeaResponse;
 import org.example.teahouse.tealeaf.api.SimpleTealeafModel;
 import org.example.teahouse.water.api.SimpleWaterModel;
 import org.jspecify.annotations.Nullable;
+
+import java.util.Collection;
 
 public class ObservedTeaService implements TeaService {
     private final static MakeTeaConvention DEFAULT_CONVENTION = new DefaultMakeTeaConvention();

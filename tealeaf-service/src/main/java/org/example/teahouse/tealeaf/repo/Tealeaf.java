@@ -1,7 +1,5 @@
 package org.example.teahouse.tealeaf.repo;
 
-import java.util.UUID;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.Value;
 import org.example.teahouse.tealeaf.api.CreateTealeafRequest;
 import org.example.teahouse.tealeaf.controller.RepresentationTealeafModel;
+
+import java.util.UUID;
 
 import static lombok.AccessLevel.PROTECTED;
 

@@ -1,12 +1,13 @@
 package org.example.teahouse.water.controller;
 
-import java.util.UUID;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.example.teahouse.water.api.WaterModel;
 import org.springframework.hateoas.RepresentationModel;
 import org.springframework.hateoas.server.core.Relation;
+
+import java.util.UUID;
 
 @Getter
 @Builder

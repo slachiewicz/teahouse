@@ -7,7 +7,6 @@ import org.example.teahouse.tea.service.ObservedTeaService;
 import org.example.teahouse.tea.service.TeaService;
 import org.example.teahouse.tea.tealeaf.TealeafClient;
 import org.example.teahouse.tea.water.WaterClient;
-
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
