@@ -21,6 +21,7 @@ dependencies {
     runtimeOnly 'com.github.loki4j:loki-logback-appender:1.+'
 
     runtimeOnly 'com.h2database:h2'
+    runtimeOnly 'org.springframework.boot:spring-boot-h2console'
     runtimeOnly 'mysql:mysql-connector-java:latest.release'
     runtimeOnly 'org.flywaydb:flyway-core'
     runtimeOnly 'org.flywaydb:flyway-mysql'
