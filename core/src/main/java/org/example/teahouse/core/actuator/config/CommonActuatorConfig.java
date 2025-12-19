@@ -31,7 +31,7 @@ public class CommonActuatorConfig {
     @Bean
     ObservationPredicate noActuatorServerObservations() {
         return (name, context) -> {
-            if (name.equals("http.server.requests") && context instanceof ServerRequestObservationContext serverContext) {
+            if (name.equals("http.server.requests") && context instanceof ServerRequestObservationContext serverContext && serverContext.getCarrier() != null) {
                 return !serverContext.getCarrier().getRequestURI().startsWith("/actuator");
             }
             else {
@@ -43,7 +43,7 @@ public class CommonActuatorConfig {
     @Bean
     ObservationPredicate noActuatorClientObservations() {
         return (name, context) -> {
-            if (name.equals("http.client.requests") && context instanceof FeignContext feignContext) {
+            if (name.equals("http.client.requests") && context instanceof FeignContext feignContext && feignContext.getCarrier() != null) {
                     return !feignContext.getCarrier().url().endsWith("/actuator/health");
             }
             else {
@@ -54,7 +54,7 @@ public class CommonActuatorConfig {
 
     @Bean
     ObservationPredicate noRootlessHttpObservations() {
-        return (name, context) -> {
+        return (_, _) -> {
             RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
             if (requestAttributes instanceof ServletRequestAttributes) {
                 Observation observation = (Observation) requestAttributes.getAttribute(ServerHttpObservationFilter.class.getName() + ".observation", SCOPE_REQUEST);

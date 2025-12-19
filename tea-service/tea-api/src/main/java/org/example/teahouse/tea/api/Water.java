@@ -8,6 +8,6 @@ import lombok.Value;
 @Builder
 @RequiredArgsConstructor
 public class Water {
-    private final String amount;
-    private final String temperature;
+    String amount;
+    String temperature;
 }

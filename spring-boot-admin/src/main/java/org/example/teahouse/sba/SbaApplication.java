@@ -14,7 +14,7 @@ import org.springframework.context.annotation.PropertySource;
 @PropertySource("classpath:build.properties")
 @Import({CommonActuatorConfig.class})
 public class SbaApplication {
-    public static void main(String[] args) {
+    static void main(String[] args) {
         SpringApplication springApplication = new SpringApplication(SbaApplication.class);
         springApplication.setApplicationStartup(new BufferingApplicationStartup(10_000));
         springApplication.run(args);

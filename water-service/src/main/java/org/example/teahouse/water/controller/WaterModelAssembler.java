@@ -1,15 +1,16 @@
 package org.example.teahouse.water.controller;
 
-import static org.springframework.hateoas.IanaLinkRelations.COLLECTION;
-import static org.springframework.hateoas.IanaLinkRelations.SEARCH;
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
-
 import org.example.teahouse.water.api.WaterModel;
 import org.example.teahouse.water.repo.Water;
 import org.springframework.hateoas.server.EntityLinks;
 import org.springframework.hateoas.server.mvc.RepresentationModelAssemblerSupport;
 import org.springframework.stereotype.Component;
+
+import static java.util.Objects.requireNonNull;
+import static org.springframework.hateoas.IanaLinkRelations.COLLECTION;
+import static org.springframework.hateoas.IanaLinkRelations.SEARCH;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @Component
 public class WaterModelAssembler extends RepresentationModelAssemblerSupport<Water, RepresentationWaterModel> {
@@ -27,7 +28,7 @@ public class WaterModelAssembler extends RepresentationModelAssemblerSupport<Wat
 
     @Override
     public RepresentationWaterModel toModel(Water water) {
-        return createModelWithId(water.getId(), water)
+        return createModelWithId(requireNonNull(water.getId()), water)
             .add(linkTo(methodOn(WaterController.class).findBySize(water.getSize())).withRel(SEARCH))
             .add(links.linkToCollectionResource(WaterModel.class).withRel(COLLECTION));
     }

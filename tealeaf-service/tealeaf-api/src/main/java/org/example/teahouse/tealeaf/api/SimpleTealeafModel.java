@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @Builder
 @RequiredArgsConstructor
-public class SimpleTealeafModel implements TealeafModel{
+public class SimpleTealeafModel implements TealeafModel {
     private final UUID id;
     private final String name;
     private final String type;

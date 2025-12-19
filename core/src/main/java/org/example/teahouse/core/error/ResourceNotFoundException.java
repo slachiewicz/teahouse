@@ -1,5 +1,8 @@
 package org.example.teahouse.core.error;
 
+import lombok.Getter;
+
+@Getter
 public class ResourceNotFoundException extends RuntimeException {
 
     private final String name;
@@ -7,9 +10,5 @@ public class ResourceNotFoundException extends RuntimeException {
     public ResourceNotFoundException(String name) {
         super("Resource not found: " + name);
         this.name = name;
-    }
-
-    public String getName() {
-        return name;
     }
 }

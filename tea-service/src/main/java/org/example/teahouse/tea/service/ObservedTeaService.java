@@ -14,10 +14,6 @@ public class ObservedTeaService implements TeaService {
     private final ObservationRegistry registry;
     private final @Nullable MakeTeaConvention customConvention;
 
-    public ObservedTeaService(TeaService delegate, ObservationRegistry registry) {
-        this(delegate, registry, null);
-    }
-
     public ObservedTeaService(TeaService delegate, ObservationRegistry registry, @Nullable MakeTeaConvention customConvention) {
         this.delegate = delegate;
         this.registry = registry;

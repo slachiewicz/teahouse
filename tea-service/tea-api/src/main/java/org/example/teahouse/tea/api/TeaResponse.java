@@ -8,7 +8,7 @@ import lombok.Value;
 @Builder
 @RequiredArgsConstructor
 public class TeaResponse {
-    private final Water water;
-    private final Tealeaf tealeaf;
-    private final String steepingTime;
+    Water water;
+    Tealeaf tealeaf;
+    String steepingTime;
 }

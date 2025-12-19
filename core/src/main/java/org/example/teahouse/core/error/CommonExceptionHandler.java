@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.filter.ServerHttpObservationFilter;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import static java.lang.Boolean.TRUE;
 import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 
@@ -55,7 +56,7 @@ public class CommonExceptionHandler extends ResponseEntityExceptionHandler {
     private String getTraceParent() {
         Span span = tracer.currentSpan();
         if (span != null) {
-            String sampledFlag = span.context().sampled() ? "01" : "00";
+            String sampledFlag = TRUE.equals(span.context().sampled()) ? "01" : "00";
             return "00-%s-%s-%s".formatted(span.context().traceId(), span.context().spanId(), sampledFlag);
         }
         else {

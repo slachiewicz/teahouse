@@ -18,7 +18,6 @@ public class DefaultMakeTeaConvention implements MakeTeaConvention {
 //            "water.size", context.getWaterSize()
 //        );
 
-        // with "MakeTeaDocumentation"
         return KeyValues.of(
             MakeTeaDocumentation.LowCardinalityKeyNames.TEA_LEAF_NAME.withValue(context.getTeaName()),
             MakeTeaDocumentation.LowCardinalityKeyNames.WATER_SIZE.withValue(context.getWaterSize())

@@ -22,7 +22,7 @@ import org.springframework.context.annotation.PropertySource;
 @PropertySource("classpath:build.properties")
 @ComponentScan(basePackages = { "org.example.teahouse" })
 public class TeaServiceApplication {
-    public static void main(String[] args) {
+    static void main(String[] args) {
         SpringApplication springApplication = new SpringApplication(TeaServiceApplication.class);
         springApplication.setApplicationStartup(new BufferingApplicationStartup(10_000));
         springApplication.run(args);

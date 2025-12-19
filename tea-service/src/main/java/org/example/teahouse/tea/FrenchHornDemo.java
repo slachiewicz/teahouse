@@ -6,7 +6,7 @@ import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.Synthesizer;
 
 public class FrenchHornDemo {
-    public static void main(String[] args) throws MidiUnavailableException, InterruptedException {
+    static void main() throws MidiUnavailableException, InterruptedException {
         Synthesizer synthesizer = MidiSystem.getSynthesizer();
         synthesizer.open();
         MidiChannel channel = synthesizer.getChannels()[0];

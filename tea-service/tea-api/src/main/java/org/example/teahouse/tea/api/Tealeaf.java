@@ -8,7 +8,7 @@ import lombok.Value;
 @Builder
 @RequiredArgsConstructor
 public class Tealeaf {
-    private final String name;
-    private final String type;
-    private final String amount;
+    String name;
+    String type;
+    String amount;
 }

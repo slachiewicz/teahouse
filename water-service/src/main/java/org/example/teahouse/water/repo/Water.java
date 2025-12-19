@@ -1,8 +1,7 @@
 package org.example.teahouse.water.repo;
 
-import static lombok.AccessLevel.PRIVATE;
-
 import java.util.UUID;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,20 +13,22 @@ import lombok.Value;
 import org.example.teahouse.water.api.CreateWaterRequest;
 import org.example.teahouse.water.controller.RepresentationWaterModel;
 
+import static lombok.AccessLevel.PROTECTED;
+
 @Entity
 @Value
 @Builder
 @RequiredArgsConstructor
-@NoArgsConstructor(force = true, access = PRIVATE)
+@NoArgsConstructor(force = true, access = PROTECTED)
 public class Water {
     @Id @GeneratedValue
-    private final UUID id;
+    UUID id;
 
     @Column(unique = true, nullable = false)
-    private final String size;
+    String size;
 
     @Column(unique=true, nullable = false)
-    private final String amount;
+    String amount;
 
     public RepresentationWaterModel toRepresentationWaterModel() {
         return RepresentationWaterModel.builder()

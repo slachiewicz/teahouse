@@ -23,8 +23,8 @@ public class SteepTeaSimulation extends Simulation {
         .acceptHeader(ApplicationJson());
 
     final ChainBuilder makeRandomTea = exec(http("makeRandomTea")
-        .get(session -> "/tea/%s".formatted(generateTeaName()))
-        .queryParam("size", session -> generateTeaSize())
+        .get(_ -> "/tea/%s".formatted(generateTeaName()))
+        .queryParam("size", _ -> generateTeaSize())
         .header(ContentType(), ApplicationJson())
         .header(Accept(), ApplicationJson())
     );

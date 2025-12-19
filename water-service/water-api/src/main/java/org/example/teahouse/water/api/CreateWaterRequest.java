@@ -12,9 +12,9 @@ import lombok.Value;
 public class CreateWaterRequest {
     @NotNull
     @Size(min = 1, max = 10)
-    private final String size;
+    String size;
 
     @NotNull
     @Size(min = 1, max = 10)
-    private final String amount;
+    String amount;
 }

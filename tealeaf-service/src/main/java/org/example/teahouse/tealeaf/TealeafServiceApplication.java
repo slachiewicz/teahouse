@@ -10,7 +10,7 @@ import org.springframework.context.annotation.PropertySource;
 @PropertySource("classpath:build.properties")
 @ComponentScan(basePackages = { "org.example.teahouse" })
 public class TealeafServiceApplication {
-    public static void main(String[] args) {
+    static void main(String[] args) {
         SpringApplication springApplication = new SpringApplication(TealeafServiceApplication.class);
         springApplication.setApplicationStartup(new BufferingApplicationStartup(10_000));
         springApplication.run(args);

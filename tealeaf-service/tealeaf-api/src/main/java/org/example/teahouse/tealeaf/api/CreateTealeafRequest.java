@@ -12,21 +12,21 @@ import lombok.Value;
 public class CreateTealeafRequest {
     @NotNull
     @Size(min = 1, max = 30)
-    private final String name;
+    String name;
 
     @NotNull
     @Size(min = 1, max = 10)
-    private final String type;
+    String type;
 
     @NotNull
     @Size(min = 1, max = 10)
-    private final String suggestedAmount;
+    String suggestedAmount;
 
     @NotNull
     @Size(min = 1, max = 10)
-    private final String suggestedSteepingTime;
+    String suggestedSteepingTime;
 
     @NotNull
     @Size(min = 1, max = 10)
-    private final String suggestedWaterTemperature;
+    String suggestedWaterTemperature;
 }

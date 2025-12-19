@@ -24,7 +24,7 @@ public class ActuatorConfig {
     @Bean
     ObservationPredicate noUiResourceObservations() {
         return (name, context) -> {
-            if (name.equals("http.server.requests") && context instanceof ServerRequestObservationContext serverContext) {
+            if (name.equals("http.server.requests") && context instanceof ServerRequestObservationContext serverContext && serverContext.getCarrier() != null) {
                 return !serverContext.getCarrier().getRequestURI().startsWith("/assets/");
             }
             else {
