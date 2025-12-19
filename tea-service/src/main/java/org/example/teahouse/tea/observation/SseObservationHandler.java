@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import io.micrometer.observation.Observation;
 import io.micrometer.observation.ObservationHandler;
-import jakarta.annotation.Nonnull;
+import org.jspecify.annotations.NonNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,12 +27,12 @@ public class SseObservationHandler implements ObservationHandler<ServerRequestOb
     }
 
     @Override
-    public void onStart(@Nonnull ServerRequestObservationContext context) {
+    public void onStart(@NonNull ServerRequestObservationContext context) {
         context.put(this.startTimeKey, System.nanoTime());
     }
 
     @Override
-    public void onStop(@Nonnull ServerRequestObservationContext context) {
+    public void onStop(@NonNull ServerRequestObservationContext context) {
         try {
             if (this.queue.remainingCapacity() < 1) {
                 this.queue.poll();
@@ -45,21 +45,19 @@ public class SseObservationHandler implements ObservationHandler<ServerRequestOb
     }
 
     @Override
-    public boolean supportsContext(@Nonnull Observation.Context context) {
+    public boolean supportsContext(Observation.@NonNull Context context) {
         return context instanceof ServerRequestObservationContext;
     }
 
-    @Nonnull
-    public String take() throws InterruptedException {
+    public @NonNull String take() throws InterruptedException {
         return this.queue.take();
     }
 
-    @Nonnull
-    private String contextToMessage(@Nonnull ServerRequestObservationContext context) {
+    private @NonNull String contextToMessage(@NonNull ServerRequestObservationContext context) {
         return "{\"name\": \"%s\", \"error\": %b, \"duration\": %d}".formatted(context.getName(), context.getError() !=null , duration(context));
     }
 
-    private long duration(@Nonnull Observation.Context context) {
+    private long duration(Observation.@NonNull Context context) {
         @SuppressWarnings("DataFlowIssue")
         long nanos = System.nanoTime() - context.<Long>get(this.startTimeKey);
         return TimeUnit.NANOSECONDS.toMillis(nanos);

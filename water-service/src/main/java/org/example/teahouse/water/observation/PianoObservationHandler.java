@@ -3,14 +3,12 @@ package org.example.teahouse.water.observation;
 import javax.sound.midi.MidiChannel;
 import javax.sound.midi.MidiUnavailableException;
 
-import io.micrometer.common.lang.NonNull;
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.observation.Observation;
-import jakarta.annotation.Nonnull;
 import net.ttddyy.observation.tracing.ConnectionContext;
 import net.ttddyy.observation.tracing.DataSourceBaseContext;
 import org.example.teahouse.core.observation.AbstractMidiObservationHandler;
-
+import org.jspecify.annotations.NonNull;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
@@ -26,9 +24,8 @@ public class PianoObservationHandler extends AbstractMidiObservationHandler<Data
         this.piano = this.synthesizer.getChannels()[0];
     }
 
-    @Nonnull
     @Override
-    protected Note contextToNote(@Nonnull DataSourceBaseContext context) {
+    protected @NonNull Note contextToNote(@NonNull DataSourceBaseContext context) {
 //        int[] notes = {36, 38, 40, 43, 45}; // C2-A2
 //        int[] notes = {48, 50, 52, 55, 57}; // C3-A3
 
@@ -38,7 +35,7 @@ public class PianoObservationHandler extends AbstractMidiObservationHandler<Data
     }
 
     @Override
-    public boolean supportsContext(@NonNull Observation.Context context) {
+    public boolean supportsContext(Observation.@NonNull Context context) {
         return context instanceof ConnectionContext;
     }
 }

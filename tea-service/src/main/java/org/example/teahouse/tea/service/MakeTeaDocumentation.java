@@ -1,10 +1,10 @@
 package org.example.teahouse.tea.service;
 
 import io.micrometer.common.docs.KeyName;
-import io.micrometer.common.lang.NonNull;
 import io.micrometer.observation.Observation;
 import io.micrometer.observation.ObservationConvention;
 import io.micrometer.observation.docs.ObservationDocumentation;
+import org.jspecify.annotations.NonNull;
 
 public enum MakeTeaDocumentation implements ObservationDocumentation {
     /**
@@ -16,9 +16,8 @@ public enum MakeTeaDocumentation implements ObservationDocumentation {
             return DefaultMakeTeaConvention.class;
         }
 
-        @NonNull
         @Override
-        public KeyName[] getLowCardinalityKeyNames() {
+        public @NonNull KeyName @NonNull [] getLowCardinalityKeyNames() {
             return LowCardinalityKeyNames.values();
         }
     };
@@ -28,9 +27,8 @@ public enum MakeTeaDocumentation implements ObservationDocumentation {
          * Name that uniquely identifies a tea-leaf.
          */
         TEA_LEAF_NAME {
-            @NonNull
             @Override
-            public String asString() {
+            public @NonNull String asString() {
                 return "tea.name";
             }
         },
@@ -38,9 +36,8 @@ public enum MakeTeaDocumentation implements ObservationDocumentation {
          * Water size (small, medium, large).
          */
         WATER_SIZE {
-            @NonNull
             @Override
-            public String asString() {
+            public @NonNull String asString() {
                 return "water.size";
             }
         }

@@ -2,18 +2,17 @@ package org.example.teahouse.tea.service;
 
 import java.util.Collection;
 
-import io.micrometer.common.lang.Nullable;
 import io.micrometer.observation.ObservationRegistry;
 import org.example.teahouse.tea.api.TeaResponse;
 import org.example.teahouse.tealeaf.api.SimpleTealeafModel;
 import org.example.teahouse.water.api.SimpleWaterModel;
+import org.jspecify.annotations.Nullable;
 
 public class ObservedTeaService implements TeaService {
     private final static MakeTeaConvention DEFAULT_CONVENTION = new DefaultMakeTeaConvention();
     private final TeaService delegate;
     private final ObservationRegistry registry;
-    @Nullable
-    private final MakeTeaConvention customConvention;
+    private final @Nullable MakeTeaConvention customConvention;
 
     public ObservedTeaService(TeaService delegate, ObservationRegistry registry) {
         this(delegate, registry, null);

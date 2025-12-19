@@ -5,9 +5,8 @@ import javax.sound.midi.MidiUnavailableException;
 
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.observation.Observation;
-import jakarta.annotation.Nonnull;
 import org.example.teahouse.core.observation.AbstractMidiObservationHandler;
-
+import org.jspecify.annotations.NonNull;
 import org.springframework.context.annotation.Profile;
 import org.springframework.http.server.observation.ServerRequestObservationContext;
 import org.springframework.stereotype.Component;
@@ -29,9 +28,8 @@ public class PercussionObservationHandler extends AbstractMidiObservationHandler
         this.frenchHorn.programChange(synthesizer.getAvailableInstruments()[60].getPatch().getProgram());
     }
 
-    @Nonnull
     @Override
-    protected Note contextToNote(@Nonnull ServerRequestObservationContext context) {
+    protected @NonNull Note contextToNote(@NonNull ServerRequestObservationContext context) {
         long duration = duration(context);
         if (context.getError() != null) {
             // play C4 (middle C)
@@ -45,7 +43,7 @@ public class PercussionObservationHandler extends AbstractMidiObservationHandler
     }
 
     @Override
-    public boolean supportsContext(@Nonnull Observation.Context context) {
+    public boolean supportsContext(Observation.@NonNull Context context) {
         return context instanceof ServerRequestObservationContext;
     }
 }

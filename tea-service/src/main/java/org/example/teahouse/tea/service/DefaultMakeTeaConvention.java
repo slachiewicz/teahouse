@@ -1,20 +1,18 @@
 package org.example.teahouse.tea.service;
 
 import io.micrometer.common.KeyValues;
-import io.micrometer.common.lang.NonNull;
-import io.micrometer.common.lang.Nullable;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
 
 public class DefaultMakeTeaConvention implements MakeTeaConvention {
 
-    @Nullable
     @Override
-    public String getName() {
+    public @Nullable String getName() {
         return "make.tea";
     }
 
-    @NonNull
     @Override
-    public KeyValues getLowCardinalityKeyValues(MakeTeaContext context) {
+    public @NonNull KeyValues getLowCardinalityKeyValues(MakeTeaContext context) {
 //        return KeyValues.of(
 //            "tea.name", context.getTeaName(),
 //            "water.size", context.getWaterSize()

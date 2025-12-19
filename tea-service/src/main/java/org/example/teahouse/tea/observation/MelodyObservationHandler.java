@@ -10,9 +10,9 @@ import javax.sound.midi.MidiUnavailableException;
 
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.observation.Observation;
-import jakarta.annotation.Nonnull;
 import org.example.teahouse.core.observation.AbstractMidiObservationHandler;
 
+import org.jspecify.annotations.NonNull;
 import org.springframework.context.annotation.Profile;
 import org.springframework.http.server.observation.ServerRequestObservationContext;
 import org.springframework.stereotype.Component;
@@ -59,14 +59,13 @@ public class MelodyObservationHandler extends AbstractMidiObservationHandler<Ser
             .toList();
     }
 
-    @Nonnull
     @Override
-    protected Note contextToNote(@Nonnull ServerRequestObservationContext context) {
+    protected @NonNull Note contextToNote(@NonNull ServerRequestObservationContext context) {
         return program.get(programPosition.getAndIncrement() % program.size());
     }
 
     @Override
-    public boolean supportsContext(@Nonnull Observation.Context context) {
+    public boolean supportsContext(Observation.@NonNull Context context) {
         return context instanceof ServerRequestObservationContext;
     }
 

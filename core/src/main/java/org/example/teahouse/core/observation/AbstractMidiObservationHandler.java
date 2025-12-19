@@ -1,12 +1,6 @@
 package org.example.teahouse.core.observation;
 
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.TimeUnit;
-
+import java.util.concurrent.*;
 import javax.sound.midi.MidiChannel;
 import javax.sound.midi.MidiSystem;
 import javax.sound.midi.MidiUnavailableException;
@@ -16,10 +10,9 @@ import io.micrometer.core.instrument.Gauge;
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.observation.Observation;
 import io.micrometer.observation.ObservationHandler;
-import jakarta.annotation.Nonnull;
+import org.jspecify.annotations.NonNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.springframework.beans.factory.DisposableBean;
 
 public abstract class AbstractMidiObservationHandler<T extends Observation.Context> implements ObservationHandler<T>, DisposableBean {
@@ -50,18 +43,17 @@ public abstract class AbstractMidiObservationHandler<T extends Observation.Conte
         Gauge.builder("midi.queue.remaining", this.queue::remainingCapacity).tag("handler", this.getClass().getSimpleName()).register(registry);
     }
 
-    public record Note(@Nonnull MidiChannel channel, int noteNumber, int velocity, long duration) {}
+    public record Note(@NonNull MidiChannel channel, int noteNumber, int velocity, long duration) {}
 
-    @Nonnull
-    protected abstract Note contextToNote(@Nonnull T context);
+    protected abstract @NonNull Note contextToNote(@NonNull T context);
 
     @Override
-    public void onStart(@Nonnull T context) {
+    public void onStart(@NonNull T context) {
         context.put(this.startTimeKey, System.nanoTime());
     }
 
     @Override
-    public void onStop(@Nonnull T context) {
+    public void onStop(@NonNull T context) {
         try {
             if (this.queue.remainingCapacity() < 1) {
                 this.queue.poll();
@@ -79,7 +71,7 @@ public abstract class AbstractMidiObservationHandler<T extends Observation.Conte
         this.synthesizer.close();
     }
 
-    protected int randomNote(@Nonnull int[] notes) {
+    protected int randomNote(int @NonNull [] notes) {
         return notes[(int)(Math.random() * notes.length)];
     }
 
@@ -87,7 +79,7 @@ public abstract class AbstractMidiObservationHandler<T extends Observation.Conte
         return (int)(Math.random() * (endExclusive - beginInclusive)) + beginInclusive;
     }
 
-    protected long duration(@Nonnull Observation.Context context) {
+    protected long duration(Observation.@NonNull Context context) {
         @SuppressWarnings("DataFlowIssue")
         long nanos = System.nanoTime() - context.<Long>get(this.startTimeKey);
         return Math.max(100, TimeUnit.NANOSECONDS.toMillis(nanos));
