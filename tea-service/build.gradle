@@ -15,7 +15,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
-    implementation 'io.github.openfeign:feign-okhttp'
+    implementation 'io.github.openfeign:feign-hc5'
     implementation 'io.github.openfeign:feign-micrometer'
 
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
@@ -24,8 +24,8 @@ dependencies {
 
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:latest.release'
 
-//    implementation 'org.zalando:logbook-spring-boot-starter:latest.release'
-//    implementation 'org.zalando:logbook-okhttp:latest.release'
+    implementation 'org.zalando:logbook-spring-boot-starter:latest.release'
+    implementation 'org.zalando:logbook-httpclient5:latest.release'
 
     runtimeOnly 'com.github.loki4j:loki-logback-appender:1.+'
 
