@@ -23,15 +23,15 @@
         <http>
             <url>http://localhost:3100/loki/api/v1/push</url>
         </http>
-        <format>
-            <label>
-                <pattern>org=${orgName},application=${appName},host=${HOSTNAME},level=%level</pattern>
-            </label>
-            <message>
-                <pattern>${FILE_LOG_PATTERN}</pattern>
-            </message>
-            <sortByTime>true</sortByTime>
-        </format>
+        <labels>
+            org=${orgName}
+            application=${appName}
+            host=${HOSTNAME}
+            level=%level
+        </labels>
+        <message>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+        </message>
     </appender>
 
     <logger name="org.zalando.logbook.Logbook" level="ALL" additivity="false">
@@ -41,8 +41,8 @@
     <root level="INFO">
         <appender-ref ref="CONSOLE" />
         <appender-ref ref="FILE" />
-        <springProfile name="loki">
-            <appender-ref ref="LOKI" />
-        </springProfile>
+        <!-- <springProfile name="loki"> -->
+        <appender-ref ref="LOKI" />
+        <!-- </springProfile> -->
     </root>
 </configuration>

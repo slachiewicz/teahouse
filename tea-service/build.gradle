@@ -27,7 +27,7 @@ dependencies {
     implementation 'org.zalando:logbook-spring-boot-starter:latest.release'
     implementation 'org.zalando:logbook-httpclient5:latest.release'
 
-    runtimeOnly 'com.github.loki4j:loki-logback-appender:1.+'
+    runtimeOnly 'com.github.loki4j:loki-logback-appender:2.+'
 
     adoc 'io.micrometer:micrometer-docs-generator:1.+'
 }
