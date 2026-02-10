@@ -41,8 +41,11 @@
     <root level="INFO">
         <appender-ref ref="CONSOLE" />
         <appender-ref ref="FILE" />
-        <!-- <springProfile name="loki"> -->
-        <appender-ref ref="LOKI" />
-        <!-- </springProfile> -->
     </root>
+
+    <springProfile name="loki">
+        <root level="INFO">
+            <appender-ref ref="LOKI" />
+        </root>
+    </springProfile>
 </configuration>
