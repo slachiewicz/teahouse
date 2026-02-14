@@ -4,11 +4,10 @@
 antlr:antlr:2.7.7=productionRuntimeClasspath,runtimeClasspath,testRuntimeClasspath
 aopalliance:aopalliance:1.0=productionRuntimeClasspath,runtimeClasspath,testRuntimeClasspath
 biz.aQute.bnd:biz.aQute.bnd.annotation:7.1.0=compileClasspath,testCompileClasspath
-ch.qos.logback.access:logback-access-common:2.0.9=productionRuntimeClasspath,runtimeClasspath,testRuntimeClasspath
-ch.qos.logback.access:logback-access-tomcat:2.0.9=productionRuntimeClasspath,runtimeClasspath,testRuntimeClasspath
+ch.qos.logback.access:logback-access-common:2.0.11=productionRuntimeClasspath,runtimeClasspath,testRuntimeClasspath
+ch.qos.logback.access:logback-access-tomcat:2.0.11=productionRuntimeClasspath,runtimeClasspath,testRuntimeClasspath
 ch.qos.logback:logback-classic:1.5.25=compileClasspath,productionRuntimeClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-ch.qos.logback:logback-core:1.5.25=compileClasspath,testCompileClasspath
-ch.qos.logback:logback-core:1.5.26=productionRuntimeClasspath,runtimeClasspath,testRuntimeClasspath
+ch.qos.logback:logback-core:1.5.25=compileClasspath,productionRuntimeClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
 com.fasterxml.jackson.core:jackson-annotations:2.20=compileClasspath,productionRuntimeClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
 com.fasterxml.jackson.core:jackson-core:2.20.2=compileClasspath,productionRuntimeClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
 com.fasterxml.jackson.core:jackson-databind:2.20.2=compileClasspath,productionRuntimeClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath

@@ -2,9 +2,9 @@
 # Manual edits can break the build and are not advised.
 # This file is expected to be part of source control.
 aopalliance:aopalliance:1.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-ch.qos.logback.access:logback-access-common:2.0.9=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-ch.qos.logback.access:logback-access-tomcat:2.0.9=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-ch.qos.logback:logback-core:1.5.26=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
+ch.qos.logback.access:logback-access-common:2.0.11=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
+ch.qos.logback.access:logback-access-tomcat:2.0.11=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
+ch.qos.logback:logback-core:1.5.25=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
 com.google.errorprone:error_prone_annotations:2.41.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
 com.google.guava:failureaccess:1.0.3=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
 com.google.guava:guava:33.5.0-jre=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
