@@ -6,8 +6,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.filter.ServerHttpObservationFilter;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
@@ -15,7 +15,7 @@ import static java.lang.Boolean.TRUE;
 import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 
-@ControllerAdvice
+@RestControllerAdvice
 public class CommonExceptionHandler extends ResponseEntityExceptionHandler {
     private final Tracer tracer;
 
