@@ -52,9 +52,12 @@ bootRun {
         if (isPortOpen('localhost', 3100) && 'loki' !in profiles) { // is Loki listening?
             profiles += 'loki'
         }
+        if (isPortOpen('localhost', 9411) && 'tempo' !in profiles) { // is Tempo listening?
+            profiles += 'tempo'
+        }
         jvmArgs += commonjvmArgs + [
-                "-Dspring.profiles.active=${profiles.join(',')}",
-                "-Dspring.application.home=$rootDir"
+            "-Dspring.profiles.active=${profiles.join(',')}",
+            "-Dspring.application.home=$rootDir"
         ]
     }
 }
@@ -73,5 +76,4 @@ private static boolean isPortOpen(String host, int port) {
     catch (Exception exception) {
         return false
     }
-
 }
