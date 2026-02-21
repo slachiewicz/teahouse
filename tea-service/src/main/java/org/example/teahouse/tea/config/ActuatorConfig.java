@@ -4,20 +4,20 @@ import io.micrometer.observation.ObservationPredicate;
 import org.example.teahouse.core.actuator.health.HealthClientAdapter;
 import org.example.teahouse.tea.tealeaf.TealeafClient;
 import org.example.teahouse.tea.water.WaterClient;
-import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.health.contributor.HealthIndicator;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.server.observation.ServerRequestObservationContext;
 
-@AutoConfiguration
+@Configuration
 public class ActuatorConfig {
     @Bean
-    public HealthIndicator tealeafServiceHealthIndicator(TealeafClient tealeafClient) {
+    HealthIndicator tealeafServiceHealthIndicator(TealeafClient tealeafClient) {
         return new HealthClientAdapter(tealeafClient);
     }
 
     @Bean
-    public HealthIndicator waterServiceHealthIndicator(WaterClient waterClient) {
+    HealthIndicator waterServiceHealthIndicator(WaterClient waterClient) {
         return new HealthClientAdapter(waterClient);
     }
 
