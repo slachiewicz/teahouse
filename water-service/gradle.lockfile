@@ -188,7 +188,6 @@ org.springframework.boot:spring-boot-data-commons:4.0.3=compileClasspath,product
 org.springframework.boot:spring-boot-data-jpa:4.0.3=compileClasspath,productionRuntimeClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
 org.springframework.boot:spring-boot-data-rest:4.0.3=compileClasspath,productionRuntimeClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
 org.springframework.boot:spring-boot-dependencies:4.0.3=annotationProcessor,compileClasspath,productionRuntimeClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-org.springframework.boot:spring-boot-devtools:4.0.3=compileClasspath
 org.springframework.boot:spring-boot-flyway:4.0.3=compileClasspath,productionRuntimeClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
 org.springframework.boot:spring-boot-h2console:4.0.3=productionRuntimeClasspath,runtimeClasspath,testRuntimeClasspath
 org.springframework.boot:spring-boot-hateoas:4.0.3=compileClasspath,productionRuntimeClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath

@@ -169,7 +169,6 @@ org.springframework.boot:spring-boot-actuator:4.0.3=compileClasspath,productionR
 org.springframework.boot:spring-boot-autoconfigure:4.0.3=compileClasspath,productionRuntimeClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
 org.springframework.boot:spring-boot-cache:4.0.3=compileClasspath,productionRuntimeClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
 org.springframework.boot:spring-boot-dependencies:4.0.3=annotationProcessor,compileClasspath,productionRuntimeClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-org.springframework.boot:spring-boot-devtools:4.0.3=compileClasspath
 org.springframework.boot:spring-boot-health:4.0.3=compileClasspath,productionRuntimeClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
 org.springframework.boot:spring-boot-http-client:4.0.3=compileClasspath,productionRuntimeClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
 org.springframework.boot:spring-boot-http-codec:4.0.3=compileClasspath,productionRuntimeClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath

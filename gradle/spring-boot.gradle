@@ -12,8 +12,6 @@ dependencies {
     implementation 'io.micrometer:micrometer-registry-prometheus'
     implementation 'org.jolokia:jolokia-support-springboot:2.+'
 
-    compileOnly 'org.springframework.boot:spring-boot-devtools'
-
     testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
 }
 
