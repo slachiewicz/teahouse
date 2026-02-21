@@ -21,13 +21,17 @@ buildscript {
     }
 }
 
-task clean
+tasks.register('clean') {
+    doLast {
+        delete 'build'
+    }
+}
 
 apply plugin: 'org.ajoberstar.grgit'
 apply from: "$rootDir/gradle/idea.gradle"
 
 allprojects {
-    task cleanAll {
+    tasks.register('cleanAll') {
         description = 'Deletes the build directory and the IDE files and directories'
         group = 'build'
         dependsOn clean, cleanIdea, cleanIdeaWorkspace

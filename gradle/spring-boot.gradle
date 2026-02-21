@@ -4,6 +4,11 @@ apply plugin: 'com.gorylenko.gradle-git-properties'
 apply plugin: 'org.cyclonedx.bom'
 
 ext.profiles = project.hasProperty('profiles') ? project.getProperty('profiles').split(',') : ['local'] // ./gradlew bootRun -Pprofiles=profileName
+ext.buildProperties = [
+    'sourceCompatibility': project.properties.java.sourceCompatibility,
+    'targetCompatibility': project.properties.java.sourceCompatibility,
+    'gradleVersion': project.properties.gradle.gradleVersion
+]
 
 dependencies {
     implementation project(':core')
@@ -18,8 +23,8 @@ dependencies {
 
 bootJar.manifest.attributes += jar.manifest.attributes
 
-processResources {
-    filesMatching('build.properties') { it.expand(project.properties) }
+tasks.named('processResources') {
+    filesMatching('build.properties') { it.expand(buildProperties) }
 }
 
 springBoot {
@@ -46,7 +51,7 @@ def commonjvmArgs = [
 ]
 
 mkdir "$rootDir/logs"
-bootRun {
+tasks.named('bootRun') {
     doFirst {
         if (isPortOpen('localhost', 3100) && 'loki' !in profiles) { // is Loki listening?
             profiles += 'loki'
@@ -61,7 +66,7 @@ bootRun {
     }
 }
 
-test {
+tasks.named('test') {
     jvmArgs += commonjvmArgs + [
         "-Dspring.application.home=$rootDir"
     ]
