@@ -1,4 +1,4 @@
-package org.example.teahouse.core.actuator.config;
+package org.example.teahouse.core.actuator;
 
 import feign.micrometer.FeignContext;
 import io.micrometer.common.KeyValue;
@@ -8,9 +8,9 @@ import io.micrometer.observation.ObservationPredicate;
 import net.ttddyy.observation.tracing.DataSourceBaseContext;
 import org.example.teahouse.core.actuator.info.RuntimeInfoContributor;
 import org.springframework.boot.actuate.info.InfoContributor;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.http.server.observation.ServerRequestObservationContext;
 import org.springframework.web.context.request.RequestAttributes;
@@ -20,8 +20,8 @@ import org.springframework.web.filter.ServerHttpObservationFilter;
 
 import static org.springframework.web.context.request.RequestAttributes.SCOPE_REQUEST;
 
-@Configuration(proxyBeanMethods = false)
-public class CommonActuatorConfig {
+@AutoConfiguration
+public class CommonActuatorAutoConfiguration {
     @Bean
     InfoContributor runtimeInfoContributor(Environment environment) {
         return new RuntimeInfoContributor(environment);
@@ -77,7 +77,7 @@ public class CommonActuatorConfig {
         };
     }
 
-    @Configuration(proxyBeanMethods = false)
+    @AutoConfiguration
     @ConditionalOnClass(DataSourceBaseContext.class)
     static class DataSourceActuatorConfig {
         @Bean
