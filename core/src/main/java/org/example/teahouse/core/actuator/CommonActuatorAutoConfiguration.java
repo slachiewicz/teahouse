@@ -12,6 +12,7 @@ import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
+import org.springframework.http.client.observation.ClientRequestObservationContext;
 import org.springframework.http.server.observation.ServerRequestObservationContext;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -44,6 +45,18 @@ public class CommonActuatorAutoConfiguration {
         return (name, context) -> {
             if (name.equals("http.client.requests") && context instanceof FeignContext feignContext && feignContext.getCarrier() != null) {
                     return !feignContext.getCarrier().url().endsWith("/actuator/health");
+            }
+            else {
+                return true;
+            }
+        };
+    }
+
+    @Bean
+    ObservationPredicate noEurekaClientObservations() {
+        return (name, context) -> {
+            if (name.equals("http.client.requests") && context instanceof ClientRequestObservationContext rqContext && rqContext.getCarrier() != null) {
+                return !rqContext.getCarrier().getURI().getPath().startsWith("/eureka/");
             }
             else {
                 return true;
