@@ -19,7 +19,6 @@ dependencies {
     implementation 'io.github.openfeign:feign-micrometer'
 
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
-    implementation 'org.springframework.boot:spring-boot-micrometer-tracing-brave'
     implementation 'org.springframework.boot:spring-boot-starter-zipkin'
 
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:latest.release'
