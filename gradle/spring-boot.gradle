@@ -21,7 +21,7 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
 }
 
-bootJar.manifest.attributes += jar.manifest.attributes
+bootJar.manifest.attributes(jar.manifest.attributes)
 
 tasks.named('processResources') {
     filesMatching('build.properties') { it.expand(buildProperties) }
